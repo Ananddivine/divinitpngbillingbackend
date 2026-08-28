@@ -47,8 +47,7 @@ initializeMonthlyInvoiceReportScheduler();
 
 const corsOptions = {
   origin: [
-    'https://lapunivers.vercel.app',
-    'https://billing.Divineitpng.in',
+    'https://billing.divineitpng.com/',    
     'http://localhost:5173'
   ],
   credentials: true, 

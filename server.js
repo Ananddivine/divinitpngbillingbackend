@@ -47,23 +47,23 @@ initializeMonthlyInvoiceReportScheduler();
 
 const corsOptions = {
   origin: [
-    'https://billing.divineitpng.com/',    
-    'http://localhost:5173'
+    "https://billing.divineitpng.com",
+    "http://localhost:5173",
   ],
-  credentials: true, 
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   allowedHeaders: [
-    'Content-Type', 
-    'Authorization', 
-    'auth-token', 
-    'hemail', 
-    'uniqToken',
-    'User-Email' // ✅ Add this explicitly
-  ]
+    "Content-Type",
+    "Authorization",
+    "auth-token",
+    "hemail",
+    "uniqToken",
+    "User-Email",
+  ],
 };
 
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // Handle preflight requests
+
 
 
 const invoiceDir = path.join(__dirname, "uploads", "invoices");

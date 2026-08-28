@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const receiptController = require("../controllers/DivineitpngReceiptController");
+const receiptController = require("../controllers/DivineitpngReceiptController.js");
 
 // NOTE: keep specific routes (last, job/last, search-job) ABOVE "/:id"
 // so Express doesn't treat "last" or "job" as an :id param.

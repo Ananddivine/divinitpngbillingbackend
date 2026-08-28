@@ -1,4 +1,4 @@
-const Receipt = require("../models/DivineitpngReceipt");
+const Receipt = require("../models/Divineitpngreceipt");
 
 // Generate next receipt number, e.g. ACK26-0001
 exports.getLastReceiptNumber = async (req, res) => {

@@ -1,7 +1,7 @@
-const Po =   require("../models/DivineitpngPo");
+const Po =   require("../models/SkylapitPo");
 const axios = require('axios')
 const mongoose = require("mongoose");
-const PartsOrder = require("../models/DivineitpngPo");
+const PartsOrder = require("../models/SkylapitPo");
 
 
 exports.createPo = async (req, res) => {

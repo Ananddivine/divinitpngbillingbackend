@@ -1,6 +1,6 @@
-const Stock = require("../models/DivineitpngStockItemmodel");
-const DivineitpngStockItem = require("../models/DivineitpngStockItemmodel")
-const PartsOrder = require("../models/DivineitpngPo");
+const Stock = require("../models/SkylapitStockItemmodel");
+const SkylapitStockItem = require("../models/SkylapitStockItemmodel")
+const PartsOrder = require("../models/SkylapitPo");
 
 // Add new stock item
 exports.addStock = async (req, res) => {
@@ -22,13 +22,13 @@ exports.addStock = async (req, res) => {
     try {
       const { name, quantity, orderId } = req.body; // Use orderId instead of poNumber
   
-      let stockItem = await DivineitpngStockItem.findOne({ name });
+      let stockItem = await SkylapitStockItem.findOne({ name });
   
       if (stockItem) {
         stockItem.quantity += quantity;
         await stockItem.save();
       } else {
-        stockItem = new DivineitpngStockItem({
+        stockItem = new SkylapitStockItem({
           name,
           category: "Uncategorized",
           quantity,

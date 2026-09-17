@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const notificationSchema = new mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // The user who will receive the notification
   issue: { type: mongoose.Schema.Types.ObjectId, ref: 'Issue' }, // The issue being replied to

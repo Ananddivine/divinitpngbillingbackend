@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getTotalSales, getTotalCustomers, getStockItems, getSalesData, getInvoiceSummary, updatePaymentStatus, getDueInvoiceCount, updateInvoice } = require("../controllers/DivineitpnginvoiceController");
+const { getTotalSales, getTotalCustomers, getStockItems, getSalesData, getInvoiceSummary, updatePaymentStatus, getDueInvoiceCount, updateInvoice } = require("../controllers/SkylapitinvoiceController");
 
 
 router.get("/sales/total", getTotalSales);

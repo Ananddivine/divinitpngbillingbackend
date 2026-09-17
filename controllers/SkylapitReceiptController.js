@@ -1,4 +1,4 @@
-const Receipt = require("../models/Divineitpngreceipt");
+const Receipt = require("../models/Skylapitreceipt");
 
 // Generate next receipt number, e.g. ACK26-0001
 exports.getLastReceiptNumber = async (req, res) => {
@@ -27,16 +27,16 @@ exports.getLastReceiptNumber = async (req, res) => {
   }
 };
 
-// Generate next job number, e.g. DIP0001
+// Generate next job number, e.g. SKY0001
 exports.getLastJobNumber = async (req, res) => {
   try {
     const lastReceipt = await Receipt.findOne()
       .sort({ jobNumber: -1 })
       .collation({ locale: "en", numericOrdering: true });
 
-    const lastJobNumber = lastReceipt ? lastReceipt.jobNumber : "DIP0000";
-    const numericPart = parseInt(lastJobNumber.replace("DIP", ""), 10) || 0;
-    const nextJobNumber = `DIP${(numericPart + 1).toString().padStart(4, "0")}`;
+    const lastJobNumber = lastReceipt ? lastReceipt.jobNumber : "SKY0000";
+    const numericPart = parseInt(lastJobNumber.replace("SKY", ""), 10) || 0;
+    const nextJobNumber = `SKY${(numericPart + 1).toString().padStart(4, "0")}`;
 
     res.json({ lastJobNumber, nextJobNumber });
   } catch (error) {

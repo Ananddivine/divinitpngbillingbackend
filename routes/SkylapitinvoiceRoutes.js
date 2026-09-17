@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const invoiceController = require("../controllers/DivineitpnginvoiceController");
+const invoiceController = require("../controllers/SkylapitinvoiceController");
 const upload = require('../middleware/multer');
-const { getLastInvoiceNumber, deleteInvoice, getCustomerInvoices, getLastJobNumber, searchJobNumber} = require("../controllers/DivineitpnginvoiceController");
-const Invoice = require('../models/DivineitpngInvoice'); 
+const { getLastInvoiceNumber, deleteInvoice, getCustomerInvoices, getLastJobNumber, searchJobNumber} = require("../controllers/SkylapitinvoiceController");
+const Invoice = require('../models/SkylapitInvoice'); 
 
 
 // Route to create invoice with PDF

@@ -55,4 +55,4 @@ const receiptSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("DivineitpngReceipt", receiptSchema);
+module.exports = mongoose.model("SkylapitReceipt", receiptSchema);

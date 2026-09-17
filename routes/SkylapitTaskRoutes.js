@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { createTask, getAllTasks, addComment, getTaskComments, updateTaskStatus, deleteTask, getTaskById, updateTask, getTodoTaskCount } = require("../controllers/DivineitpngTaskController");
+const { createTask, getAllTasks, addComment, getTaskComments, updateTaskStatus, deleteTask, getTaskById, updateTask, getTodoTaskCount } = require("../controllers/SkylapitTaskController");
 const verifyUniqTokenMiddleware = require("../middleware/verifyUniqTokenMiddleware");
 
 

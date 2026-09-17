@@ -1,8 +1,8 @@
-const Invoice =   require("../models/DivineitpngInvoice");
+const Invoice =   require("../models/SkylapitInvoice");
 const path = require("path");
 const fs = require("fs");
 const axios = require('axios')
-const StockItem = require("../models/DivineitpngStockItemmodel"); 
+const StockItem = require("../models/SkylapitStockItemmodel"); 
 const moment = require("moment");
 const { sendMonthlyInvoiceReport } = require("../services/monthlyInvoiceReportService");
 
@@ -123,12 +123,12 @@ exports.getLastJobNumber = async (req, res) => {
       .sort({ jobNumber: -1 }) // Sorting numerically
       .collation({ locale: "en", numericOrdering: true }); // Ensures SK0100 > SK0099
 
-    // Default to DIP0000 if no invoice exists
-    let lastJobNumber = lastInvoice ? lastInvoice.jobNumber : "DIP0000";
+    // Default to SKY0000 if no invoice exists
+    let lastJobNumber = lastInvoice ? lastInvoice.jobNumber : "SKY0000";
 
     // Extract numeric part and increment
-    const numericPart = parseInt(lastJobNumber.replace("DIP", ""), 10) || 0;
-    const nextJobNumber = `DIP${(numericPart).toString().padStart(4, "0")}`;
+    const numericPart = parseInt(lastJobNumber.replace("SKY", ""), 10) || 0;
+    const nextJobNumber = `SKY${(numericPart).toString().padStart(4, "0")}`;
 
     res.json({ lastJobNumber: nextJobNumber });
   } catch (error) {

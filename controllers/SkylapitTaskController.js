@@ -1,4 +1,4 @@
-const Task = require("../models/DivineitpngTaskModel");
+const Task = require("../models/SkylapitTaskModel");
 const { v4: uuidv4 } = require("uuid");
 const mongoose = require("mongoose");
 

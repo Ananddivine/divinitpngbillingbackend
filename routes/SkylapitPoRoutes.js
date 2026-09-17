@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const poController = require("../controllers/DivineitpngPoController");
+const poController = require("../controllers/SkylapitPoController");
 const upload = require('../middleware/multer');
-const { getLastPoNumber, deletePo, getvenderPo, updatePo, getPoById, getDeletedOrders, getPoByNumber, getProductsandQuantity, getAllVendors, getPurchaseData } = require("../controllers/DivineitpngPoController");
+const { getLastPoNumber, deletePo, getvenderPo, updatePo, getPoById, getDeletedOrders, getPoByNumber, getProductsandQuantity, getAllVendors, getPurchaseData } = require("../controllers/SkylapitPoController");
 
   router.post("/po/create", upload.single("poPdf"), poController.createPo);
   router.get("/po/all", poController.getPos);
@@ -15,7 +15,7 @@ const { getLastPoNumber, deletePo, getvenderPo, updatePo, getPoById, getDeletedO
   router.get("/deleted-orders", getDeletedOrders);
   router.delete("/po/delete-permanent/:poId", poController.permanentlyDeletePo);
   router.put("/po/updatePo", updatePo);
-  router.get("/DivineitpngPoOrders/:id", getPoByNumber);
+  router.get("/SkylapitPoOrders/:id", getPoByNumber);
   router.get("/ProductsandQuantity", getProductsandQuantity);
   router.get("/vendors", getAllVendors);
   router.get("/overview", getPurchaseData);

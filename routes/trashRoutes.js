@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const invoiceController = require("../controllers/DivineitpnginvoiceController");
+const invoiceController = require("../controllers/SkylapitinvoiceController");
 
 router.put("/trash/:invoiceId", invoiceController.softDeleteInvoice);
 router.put("/restore/:invoiceId", invoiceController.restoreInvoice);

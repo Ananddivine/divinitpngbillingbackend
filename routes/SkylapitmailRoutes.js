@@ -34,15 +34,15 @@ router.post('/skymail', upload.single('pdf'), async (req, res) => {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Your Invoice from Divineitpng',
+      subject: 'Your Invoice from Skylapit',
       text: 'Please find your attached invoice.',
       html: `
     <p>Please find your attached invoice.</p>
     <hr>
     <p>Best regards,</p>
-    <p><strong>Divineitpng</strong></p>
+    <p><strong>Skylapit</strong></p>
     <p>📞 +91 9606120007</p>
-    <p>🌐 <a href="https://www.Divineitpng.in" target="_blank">Divineitpng.in</a></p>
+    <p>🌐 <a href="https://www.Skylapitsolution.in" target="_blank">Skylapit.com</a></p>
   `,
       attachments: [
         {

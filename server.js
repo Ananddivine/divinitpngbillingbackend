@@ -23,18 +23,18 @@ const productRoutes = require('./routes/productRoutes');
 const userFileRoutes = require('./routes/userfileRoutes');  // Ensure this path is correct
 const issueRoutes = require('./routes/issueRoutes');
 const deviceRoutes = require("./routes/deviceRoutes");
-const invoiceRoutes = require("./routes/DivineitpnginvoiceRoutes");
+const invoiceRoutes = require("./routes/SkylapitinvoiceRoutes");
 
 
 const emailRoutes = require('./routes/emailRoutes');
-const DivineitpngmailRoutes = require('./routes/DivineitpngmailRoutes');
-const DivineitpngRoutes = require('./routes/DivineitpngRoutes');
-const DivineitpngstockRoutes = require('./routes/DivineitpngstockRoutes');
+const SkylapitmailRoutes = require('./routes/SkylapitmailRoutes');
+const SkylapitRoutes = require('./routes/SkylapitRoutes');
+const SkylapitstockRoutes = require('./routes/SkylapitstockRoutes');
 const laptopRoutes = require("./routes/laptopRoutes");
 const trashRoutes = require("./routes/trashRoutes");
-const DivineitpngTaskRoutes = require("./routes/DivineitpngTaskRoutes");
-const DivineitpngPoRoutes = require("./routes/DivineitpngPoRoutes");
-const Divineitpngreceiptroutes = require("./routes/Divineitpngreceiptroutes");
+const SkylapitTaskRoutes = require("./routes/SkylapitTaskRoutes");
+const SkylapitPoRoutes = require("./routes/SkylapitPoRoutes");
+const Skylapitreceiptroutes = require("./routes/Skylapitreceiptroutes");
 const { initializeMonthlyInvoiceReportScheduler } = require("./services/monthlyInvoiceReportService");
 const { connect } = require('http2');
 
@@ -47,8 +47,9 @@ initializeMonthlyInvoiceReportScheduler();
 
 const corsOptions = {
   origin: [
-    "https://billing.divineitpng.com",
+    "https://billing.Skylapit.com",
     "http://localhost:5173",
+    "https://billing.skylapitsolution.com"
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
@@ -101,16 +102,16 @@ app.use("/api", deviceRoutes);
 app.use("/api/invoices", invoiceRoutes);
 
 app.use('/api', emailRoutes);
-app.use('/api', DivineitpngmailRoutes);
-app.use('/api', DivineitpngRoutes);
-app.use('/api', DivineitpngPoRoutes);
-app.use('/api', DivineitpngstockRoutes);
+app.use('/api', SkylapitmailRoutes);
+app.use('/api', SkylapitRoutes);
+app.use('/api', SkylapitPoRoutes);
+app.use('/api', SkylapitstockRoutes);
 
 app.use('/api', trashRoutes);
 app.use("/api/laptop", laptopRoutes);
 
-app.use('/api/task', DivineitpngTaskRoutes);
-app.use('/api/receipts', Divineitpngreceiptroutes);
+app.use('/api/task', SkylapitTaskRoutes);
+app.use('/api/receipts', Skylapitreceiptroutes);
 
 
 

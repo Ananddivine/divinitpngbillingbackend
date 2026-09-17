@@ -1,9 +1,9 @@
 const cron = require("node-cron");
 const nodemailer = require("nodemailer");
 const XLSX = require("xlsx");
-const Invoice = require("../models/DivineitpngInvoice");
+const Invoice = require("../models/SkylapitInvoice");
 
-const REPORT_RECIPIENT = "Divineitpngwhitefield@gmail.com";
+const REPORT_RECIPIENT = "Skylapitwhitefield@gmail.com";
 let schedulerStarted = false;
 const emailPass = String(process.env.EMAIL_PASS || "").replace(/\s+/g, "");
 
@@ -121,14 +121,14 @@ const sendMonthlyInvoiceReport = async (options = {}) => {
 
   const periodLabel = monthLabel(target);
   const workbookBuffer = buildWorkbook({ invoices });
-  const fileName = `Divineitpng_Monthly_Report_${target.year}_${String(target.month).padStart(2, "0")}.xlsx`;
+  const fileName = `Skylapit_Monthly_Report_${target.year}_${String(target.month).padStart(2, "0")}.xlsx`;
 
   await transporter.sendMail({
     from: process.env.EMAIL_USER,
     to: REPORT_RECIPIENT,
-    subject: `Divineitpng Monthly Invoice Report - ${periodLabel}`,
-    text: `Attached is the Divineitpng monthly invoice report for ${periodLabel}.`,
-    html: `<p>Attached is the Divineitpng monthly invoice report for <strong>${periodLabel}</strong>.</p>`,
+    subject: `Skylapit Monthly Invoice Report - ${periodLabel}`,
+    text: `Attached is the Skylapit monthly invoice report for ${periodLabel}.`,
+    html: `<p>Attached is the Skylapit monthly invoice report for <strong>${periodLabel}</strong>.</p>`,
     attachments: [
       {
         filename: fileName,
